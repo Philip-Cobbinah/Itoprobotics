@@ -179,6 +179,12 @@ localVideos.forEach((video) => {
   });
 
   video.addEventListener("play", () => {
+    localVideos.forEach((otherVideo) => {
+      if (otherVideo !== video) {
+        otherVideo.pause();
+      }
+    });
+
     if (Number.isFinite(startTime) && video.currentTime < startTime) {
       video.currentTime = startTime;
     }

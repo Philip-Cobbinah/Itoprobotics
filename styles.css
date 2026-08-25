@@ -660,6 +660,152 @@ a {
   color: rgba(255, 255, 255, 0.76);
 }
 
+.training-section {
+  background:
+    linear-gradient(135deg, rgba(6, 27, 63, 0.96), rgba(12, 77, 162, 0.9)),
+    url("assets/team/training-planning.jpg") center / cover;
+  color: #ffffff;
+}
+
+.training-section .section-heading h2,
+.training-section .section-heading p:not(.eyebrow) {
+  color: #ffffff;
+}
+
+.training-section .section-heading p:not(.eyebrow) {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.training-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.training-feature {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.training-feature video {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #000000;
+}
+
+.training-feature div {
+  padding: clamp(20px, 4vw, 30px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.training-feature span,
+.training-video-card span {
+  color: #ffd7bd;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.training-feature h3,
+.training-video-card h3 {
+  margin: 8px 0 0;
+  color: #ffffff;
+  line-height: 1.15;
+}
+
+.training-feature h3 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.training-feature p {
+  margin: 12px 0 0;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.training-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.training-video-card {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+}
+
+.training-video-card video {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #000000;
+}
+
+.training-video-card h3 {
+  padding: 12px 14px 14px;
+  font-size: 0.98rem;
+}
+
+.team-section {
+  background:
+    linear-gradient(180deg, rgba(244, 247, 251, 0.92), rgba(255, 255, 255, 1)),
+    #ffffff;
+}
+
+.team-gallery {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 18px;
+}
+
+.team-photo {
+  position: relative;
+  min-height: 260px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  background: var(--navy);
+}
+
+.team-photo.large-photo {
+  grid-row: span 3;
+  min-height: 620px;
+}
+
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  transition: transform 260ms ease;
+}
+
+.team-photo:hover img {
+  transform: scale(1.03);
+}
+
+.team-photo::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(0deg, rgba(6, 27, 63, 0.78), rgba(6, 27, 63, 0.02) 58%);
+}
+
+.team-photo figcaption {
+  position: absolute;
+  z-index: 1;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  color: #ffffff;
+  font-weight: 800;
+}
+
 .foundation-section {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
@@ -949,10 +1095,21 @@ textarea:focus {
 
   .service-grid,
   .video-grid,
+  .training-layout,
   .split-section,
   .foundation-section,
   .site-footer {
     grid-template-columns: 1fr;
+  }
+
+  .team-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .team-photo.large-photo {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    min-height: 420px;
   }
 
   .showcase-shell {
@@ -1019,6 +1176,16 @@ textarea:focus {
 
   .form-row {
     grid-template-columns: 1fr;
+  }
+
+  .training-video-grid,
+  .team-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .team-photo,
+  .team-photo.large-photo {
+    min-height: 280px;
   }
 
   .project-carousel,
